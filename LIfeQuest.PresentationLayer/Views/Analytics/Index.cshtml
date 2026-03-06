@@ -1,0 +1,155 @@
+@{
+    ViewData["Title"] = "Analytics";
+}
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Your Performance Insights</h1>
+    <button class="btn btn-sm btn-outline-secondary shadow-sm">
+        <i class="fas fa-calendar-alt fa-sm me-2"></i> This Month
+    </button>
+</div>
+
+<div class="row">
+    <!-- Metric Cards -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2" style="border-left: 0.25rem solid var(--primary-color) !important;">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Success Rate</div>
+                        <div class="h5 mb-0 font-weight-bold">88%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-info shadow h-100 py-2" style="border-left: 0.25rem solid var(--info-color) !important;">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Confidence Accuracy</div>
+                        <div class="h5 mb-0 font-weight-bold">92%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2" style="border-left: 0.25rem solid var(--warning-color) !important;">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Risk Index</div>
+                        <div class="h5 mb-0 font-weight-bold">Low</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-danger shadow h-100 py-2" style="border-left: 0.25rem solid var(--danger-color) !important;">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Overconfidence</div>
+                        <div class="h5 mb-0 font-weight-bold">Minimal</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Charts Section -->
+    <div class="col-xl-8 col-lg-7">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Progress Trends</h6>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info py-5 text-center">
+                    <i class="fas fa-chart-line fa-3x mb-3 text-info"></i>
+                    <h5>Interactive Chart Placeholder</h5>
+                    <p class="mb-0">Chart.js or similar library integration goes here.</p>
+                </div>
+                <hr>
+                <div class="row text-center mt-3">
+                    <div class="col-4">
+                        <p class="text-muted small mb-1">Quests Done</p>
+                        <h5 class="fw-bold">45</h5>
+                    </div>
+                    <div class="col-4">
+                        <p class="text-muted small mb-1">Total Hours</p>
+                        <h5 class="fw-bold">128</h5>
+                    </div>
+                    <div class="col-4">
+                        <p class="text-muted small mb-1">Days Active</p>
+                        <h5 class="fw-bold">14</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Insights Area -->
+    <div class="col-xl-4 col-lg-5">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">AI Insights</h6>
+            </div>
+            <div class="card-body">
+                <div class="mb-4">
+                    <div class="h6 fw-bold">Daily Consistency</div>
+                    <div class="progress mb-2" style="height: 10px;">
+                        <div class="progress-bar bg-success" style="width: 85%"></div>
+                    </div>
+                    <p class="text-muted xsmall">You're more consistent in Technical quests.</p>
+                </div>
+                <div class="mb-4">
+                    <div class="h6 fw-bold">Morning vs. Evening</div>
+                    <div class="progress mb-2" style="height: 10px;">
+                        <div class="progress-bar bg-warning" style="width: 40%"></div>
+                    </div>
+                    <p class="text-muted xsmall">Evening performance is lower than usual.</p>
+                </div>
+                <div class="bg-light p-3 rounded">
+                    <p class="small mb-0"><i class="fas fa-lightbulb text-warning me-2"></i><strong>Tip:</strong> Try to finish technical tasks before 10 AM for 20% higher completion rates!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Recent Decisions & Actions</h6>
+    </div>
+    <div class="card-body p-0">
+        <table class="table table-hover mb-0">
+            <thead class="bg-light">
+                <tr>
+                    <th class="ps-4">Action</th>
+                    <th>Category</th>
+                    <th>Outcome</th>
+                    <th class="text-end pe-4">Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="ps-4 fw-bold">Joined "Master C#"</td>
+                    <td>Education</td>
+                    <td><span class="badge bg-success">Success</span></td>
+                    <td class="text-end pe-4">Mar 05, 2026</td>
+                </tr>
+                 <tr>
+                    <td class="ps-4 fw-bold">Skipped "Morning Run"</td>
+                    <td>Health</td>
+                    <td><span class="badge bg-danger">Penalty</span></td>
+                    <td class="text-end pe-4">Mar 04, 2026</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
