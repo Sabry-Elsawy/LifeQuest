@@ -1,0 +1,110 @@
+@{
+    ViewData["Title"] = "Challenge Details";
+}
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="d-flex align-items-center mb-4">
+            <a href="/Challenges/Index" class="btn btn-link text-decoration-none p-0 me-3"><i class="fas fa-arrow-left fa-lg"></i></a>
+            <h1 class="h3 mb-0 text-gray-800">Learn .NET 10</h1>
+            <span class="badge bg-danger ms-3">Hard</span>
+        </div>
+
+        <!-- Progress Section -->
+        <div class="card shadow mb-4">
+            <div class="card-body text-center py-5">
+                <div class="mb-4">
+                    <h2 class="display-4 fw-bold text-primary">65%</h2>
+                    <p class="text-muted">Total Progress</p>
+                </div>
+                <div class="progress mb-4 mx-auto" style="height: 30px; width: 80%;">
+                    <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated" style="width: 65%"></div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-auto">
+                        <div class="h5 mb-0 font-weight-bold">13 / 20</div>
+                        <div class="text-muted small">Days Completed</div>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <a href="/Challenges/DailyCheckIn" class="btn btn-success btn-lg px-5 shadow"><i class="fas fa-check-circle me-2"></i> Daily Check-in</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- History Table -->
+        <div class="card shadow">
+            <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                <h6 class="m-0 font-weight-bold text-primary">Quest History</h6>
+                <button class="btn btn-sm btn-outline-primary">Export Log</button>
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-hover mb-0">
+                    <thead class="bg-light">
+                        <tr>
+                            <th class="ps-4">Date</th>
+                            <th>Time Spent</th>
+                            <th>Notes</th>
+                            <th class="text-end pe-4">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ps-4">Mar 04, 2026</td>
+                            <td>2h 30m</td>
+                            <td>Learnt about Keyed Services in DI</td>
+                            <td class="text-end pe-4"><i class="fas fa-check-circle text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4">Mar 03, 2026</td>
+                            <td>1h 45m</td>
+                            <td>Explored C# 14 primary constructors</td>
+                            <td class="text-end pe-4"><i class="fas fa-check-circle text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4">Mar 02, 2026</td>
+                            <td>3h 00m</td>
+                            <td>Built a small prototype with .NET 10</td>
+                            <td class="text-end pe-4"><i class="fas fa-check-circle text-success"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Side Stats -->
+    <div class="col-lg-4">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Quest Stats</h6>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <span class="text-muted small">Duration</span>
+                    <div class="h6 fw-bold">20 Days</div>
+                </div>
+                <div class="mb-3">
+                    <span class="text-muted small">Potential Reward</span>
+                    <div class="h6 fw-bold text-warning"><i class="fas fa-coins me-1"></i> 500 XP</div>
+                </div>
+                <div class="mb-3">
+                    <span class="text-muted small">Difficulty Multiplier</span>
+                    <div class="h6 fw-bold">x1.5</div>
+                </div>
+                <hr>
+                <button class="btn btn-outline-danger btn-sm w-100 mb-2">Abandon Quest</button>
+                <div class="text-center">
+                     <span class="text-muted" style="font-size: 0.7rem;">Created on Feb 20, 2026</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card bg-primary text-white shadow p-3">
+            <div class="text-center">
+                <i class="fas fa-info-circle mb-2 fa-2x"></i>
+                <p class="small mb-0">Completing this quest will unlock the <strong>"Framework Explorer"</strong> badge!</p>
+            </div>
+        </div>
+    </div>
+</div>
