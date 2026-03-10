@@ -5,6 +5,8 @@ using LifeQuest.DAL.UOW.Implementation;
 using LifeQuest.DAL.UOW.Interface;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using LifeQuest.BLL.Services.Interfaces;
+using LifeQuest.BLL.Services.Implementation;
 
 namespace LIfeQuest.PresentationLayer
 {
@@ -19,6 +21,9 @@ namespace LIfeQuest.PresentationLayer
 
             // UOW Di 
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            // Challenge Service Di
+            builder.Services.AddScoped<IChallengeService, ChallengeService>();
 
             // ApplicationDb Context Di
             builder.Services.AddIdentity<ApplicationUser, IdentityRole<int>>()
