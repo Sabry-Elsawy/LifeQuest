@@ -3,10 +3,16 @@ using LifeQuest.DAL.Data.Seed;
 using LifeQuest.DAL.Models;
 using LifeQuest.DAL.UOW.Implementation;
 using LifeQuest.DAL.UOW.Interface;
+using LifeQuest.BLL.Services.Implementation;
+using LifeQuest.BLL.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using LifeQuest.BLL.Services.Interfaces;
-using LifeQuest.BLL.Services.Implementation;
+using Microsoft.AspNetCore.Hosting.Builder;
+//using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using LIfeQuest.BLL.Services.Implementation;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using LifeQuest;
 
 namespace LIfeQuest.PresentationLayer
 {
@@ -19,17 +25,24 @@ namespace LIfeQuest.PresentationLayer
             //Db Connection String Di
             builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+
             // UOW Di 
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-
-            // Challenge Service Di
-            builder.Services.AddScoped<IChallengeService, ChallengeService>();
+            builder.Services.AddScoped<IApplicationUserRegisterService, ApplicationUseRegisterService>();
 
             // ApplicationDb Context Di
-            builder.Services.AddIdentity<ApplicationUser, IdentityRole<int>>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
+            builder.Services.AddIdentity<ApplicationUser, IdentityRole<int>>(options =>
+            {
+                options.Password.RequireDigit = true;
+                options.Password.RequireLowercase = true;
+                options.Password.RequiredLength = 8;
 
+                //confirm email
+                options.SignIn.RequireConfirmedEmail = true; // cant login before confirm
+            }).AddEntityFrameworkStores<ApplicationDbContext>()
+              .AddDefaultTokenProviders();
+
+            builder.Services.AddScoped<IEmailSenderService, EmailSenderService>();
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
@@ -56,6 +69,7 @@ namespace LIfeQuest.PresentationLayer
             app.UseStaticFiles();
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(

@@ -5,6 +5,7 @@ namespace LifeQuest.DAL.Models
 {
     public class ApplicationUser : IdentityUser<int>
     {
+
         [Required]
         [MinLength(3)]
         [MaxLength(50)]
@@ -12,6 +13,8 @@ namespace LifeQuest.DAL.Models
 
         [Required]
         public string Country { get; set; } = string.Empty;
+        public bool EmailConfirmed { get; set; } = false;
+
 
         public UserProfile? UserProfile { get; set; }
     }
